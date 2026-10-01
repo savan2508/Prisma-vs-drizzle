@@ -1,0 +1,3202 @@
+[
+  {
+    "workload": "overhead.ping",
+    "group": "overhead",
+    "level": 1,
+    "description": "SELECT 1 via each client's raw lane: pure per-query client overhead",
+    "lanes": {
+      "drizzle": "sql``",
+      "prisma": "raw sql"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 9214.205517146816,
+        "opsMin": 8083.722031248033,
+        "opsMax": 10344.689003045598,
+        "p50": 0.0977954999999966,
+        "p95": 0.21026000000000522,
+        "p99": 0.3105534999999975,
+        "max": 0.7423339999999996,
+        "cpuUsPerOp": 93.69,
+        "rssPeakMb": 69.28515625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 6308.675102833986,
+        "opsMin": 6286.6683025974635,
+        "opsMax": 6330.681903070507,
+        "p50": 0.1398864999999887,
+        "p95": 0.3209489999999846,
+        "p99": 0.4935910000000092,
+        "max": 1.2773819999999887,
+        "cpuUsPerOp": 195.64625,
+        "rssPeakMb": 141.5390625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "overhead.ping",
+    "group": "overhead",
+    "level": 10,
+    "description": "SELECT 1 via each client's raw lane: pure per-query client overhead",
+    "lanes": {
+      "drizzle": "sql``",
+      "prisma": "raw sql"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 33740.49997919913,
+        "opsMin": 27375.070841550536,
+        "opsMax": 40105.92911684773,
+        "p50": 0.25275700000000256,
+        "p95": 0.5846799999999917,
+        "p99": 0.8379659999999944,
+        "max": 1.2058100000000422,
+        "cpuUsPerOp": 45.36416666666666,
+        "rssPeakMb": 74.24609375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 31229.9002457407,
+        "opsMin": 25435.125582011307,
+        "opsMax": 37024.67490947009,
+        "p50": 0.2970275000000129,
+        "p95": 0.6846799999999575,
+        "p99": 0.9286790000000451,
+        "max": 1.562345999999934,
+        "cpuUsPerOp": 60.29625,
+        "rssPeakMb": 148.0703125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.aggregate",
+    "group": "read",
+    "level": 1,
+    "description": "Full-table GROUP BY status: count, sum(total_cents), avg(total_cents) over orders",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM (groupBy.aggregate)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 746.2245605142731,
+        "opsMin": 581.9155542768937,
+        "opsMax": 910.5335667516525,
+        "p50": 1.3689299999999776,
+        "p95": 1.7136354999998957,
+        "p99": 1.990372500000035,
+        "max": 2.2700850000001083,
+        "cpuUsPerOp": 386.85,
+        "rssPeakMb": 96.98046875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 556.307342275735,
+        "opsMin": 534.5474402434086,
+        "opsMax": 578.0672443080615,
+        "p50": 1.733069000000114,
+        "p95": 2.160637499999666,
+        "p99": 2.702243499999895,
+        "max": 2.731662999999571,
+        "cpuUsPerOp": 607.325,
+        "rssPeakMb": 177.15625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.aggregate",
+    "group": "read",
+    "level": 10,
+    "description": "Full-table GROUP BY status: count, sum(total_cents), avg(total_cents) over orders",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM (groupBy.aggregate)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 3269.3075668388074,
+        "opsMin": 3090.258413589047,
+        "opsMax": 3448.3567200885673,
+        "p50": 2.3887880000000905,
+        "p95": 4.547195999999985,
+        "p99": 4.9771879999999555,
+        "max": 5.244723000000022,
+        "cpuUsPerOp": 433.51666666666665,
+        "rssPeakMb": 98.09765625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 2826.715466548538,
+        "opsMin": 2481.0581547625625,
+        "opsMax": 3172.372778334514,
+        "p50": 2.7505959999998595,
+        "p95": 5.471287999999959,
+        "p99": 5.997052500000109,
+        "max": 7.521254000000226,
+        "cpuUsPerOp": 453,
+        "rssPeakMb": 177.53125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.cursorPages",
+    "group": "read",
+    "level": 1,
+    "description": "Keyset pagination session: 3 sequential pages of 100 orders",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 797.4720071341196,
+        "opsMin": 780.3462087110959,
+        "opsMax": 814.5978055571434,
+        "p50": 1.1894349999998894,
+        "p95": 1.7416050000000496,
+        "p99": 2.0741550000001325,
+        "max": 2.4923029999999926,
+        "cpuUsPerOp": 995.3566666666667,
+        "rssPeakMb": 98.58984375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 248.82216627068226,
+        "opsMin": 235.8636608662971,
+        "opsMax": 261.7806716750674,
+        "p50": 3.9625674999999774,
+        "p95": 5.40909449999981,
+        "p99": 6.437257499999987,
+        "max": 7.297474999999849,
+        "cpuUsPerOp": 3704.0333333333333,
+        "rssPeakMb": 208.62109375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.cursorPages",
+    "group": "read",
+    "level": 10,
+    "description": "Keyset pagination session: 3 sequential pages of 100 orders",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 2177.2153091554005,
+        "opsMin": 1823.5273615478648,
+        "opsMax": 2530.903256762936,
+        "p50": 4.1349705000000085,
+        "p95": 8.614081499999998,
+        "p99": 9.692841999999928,
+        "max": 12.490140999999994,
+        "cpuUsPerOp": 516.6633333333334,
+        "rssPeakMb": 101.546875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 534.6054668218133,
+        "opsMin": 493.7918009367497,
+        "opsMax": 575.4191327068767,
+        "p50": 16.91372350000006,
+        "p95": 31.434208500000068,
+        "p99": 36.67750499999988,
+        "max": 49.066749999999956,
+        "cpuUsPerOp": 2186.29,
+        "rssPeakMb": 208.96875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.filterSortPage",
+    "group": "read",
+    "level": 1,
+    "description": "Orders by status, ORDER BY created_at DESC, LIMIT 50 OFFSET n (index (status, created_at))",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 1813.1628807804477,
+        "opsMin": 1579.0486602372148,
+        "opsMax": 2047.2771013236809,
+        "p50": 0.5297880000000532,
+        "p95": 0.8152250000000549,
+        "p99": 1.0425349999999867,
+        "max": 1.5731490000000576,
+        "cpuUsPerOp": 326.95833333333337,
+        "rssPeakMb": 94.75,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 990.1838989734724,
+        "opsMin": 959.5480359870047,
+        "opsMax": 1020.8197619599403,
+        "p50": 0.9726479999999356,
+        "p95": 1.5055529999999635,
+        "p99": 1.969402999999943,
+        "max": 2.846080000000029,
+        "cpuUsPerOp": 863.6949999999999,
+        "rssPeakMb": 176.12890625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.filterSortPage",
+    "group": "read",
+    "level": 10,
+    "description": "Orders by status, ORDER BY created_at DESC, LIMIT 50 OFFSET n (index (status, created_at))",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 8650.28786037806,
+        "opsMin": 7090.430164580715,
+        "opsMax": 10210.145556175405,
+        "p50": 1.1276360000000523,
+        "p95": 2.2964355000000296,
+        "p99": 3.2240939999999796,
+        "max": 4.371617000000015,
+        "cpuUsPerOp": 139.63666666666666,
+        "rssPeakMb": 94.30078125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 2245.052580704754,
+        "opsMin": 2132.580587359183,
+        "opsMax": 2357.5245740503246,
+        "p50": 3.939444999999978,
+        "p95": 7.456053000000111,
+        "p99": 10.765076500000077,
+        "max": 12.0456879999997,
+        "cpuUsPerOp": 629.8266666666666,
+        "rssPeakMb": 198.03125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.indexRange",
+    "group": "read",
+    "level": 1,
+    "description": "Composite index (category, price) equality + range, ordered, LIMIT 50",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 3679.744519067397,
+        "opsMin": 3676.2649696896865,
+        "opsMax": 3683.2240684451076,
+        "p50": 0.23822549999999865,
+        "p95": 0.48222749999996495,
+        "p99": 0.6524009999999976,
+        "max": 1.3840580000000955,
+        "cpuUsPerOp": 254.79333333333335,
+        "rssPeakMb": 94.06640625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 1264.080819280158,
+        "opsMin": 1259.1154872350728,
+        "opsMax": 1269.0461513252433,
+        "p50": 0.7575954999999794,
+        "p95": 1.238666999999964,
+        "p99": 1.5086635000000115,
+        "max": 2.1604059999999663,
+        "cpuUsPerOp": 699.7533333333333,
+        "rssPeakMb": 168.82421875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.indexRange",
+    "group": "read",
+    "level": 10,
+    "description": "Composite index (category, price) equality + range, ordered, LIMIT 50",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 9447.258713757114,
+        "opsMin": 8078.914622595799,
+        "opsMax": 10815.60280491843,
+        "p50": 0.8193065000000388,
+        "p95": 2.275062000000048,
+        "p99": 3.64418500000005,
+        "max": 4.4731950000000325,
+        "cpuUsPerOp": 174.97166666666666,
+        "rssPeakMb": 94.63671875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 4328.275322410026,
+        "opsMin": 4148.815867793493,
+        "opsMax": 4507.734777026559,
+        "p50": 1.9636695000000373,
+        "p95": 4.2533189999999195,
+        "p99": 6.011402500000145,
+        "max": 7.621601999999939,
+        "cpuUsPerOp": 485.975,
+        "rssPeakMb": 173.30859375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.joinInclude",
+    "group": "read",
+    "level": 1,
+    "description": "A user's 5 latest orders + items + product (nested relation loading)",
+    "lanes": {
+      "drizzle": "relational queries (RQB v2)",
+      "prisma": "ORM (nested include)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 1670.742181228352,
+        "opsMin": 1516.8355243365188,
+        "opsMax": 1824.6488381201848,
+        "p50": 0.5662965000000213,
+        "p95": 0.8989354999999932,
+        "p99": 1.1885370000000535,
+        "max": 2.2930290000001605,
+        "cpuUsPerOp": 638.425,
+        "rssPeakMb": 98.75390625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 874.9796443940384,
+        "opsMin": 851.5823818539508,
+        "opsMax": 898.376906934126,
+        "p50": 1.1073514999998224,
+        "p95": 1.6217749999998432,
+        "p99": 1.928662499999973,
+        "max": 2.3415209999998297,
+        "cpuUsPerOp": 949.32,
+        "rssPeakMb": 196.55078125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.joinInclude",
+    "group": "read",
+    "level": 10,
+    "description": "A user's 5 latest orders + items + product (nested relation loading)",
+    "lanes": {
+      "drizzle": "relational queries (RQB v2)",
+      "prisma": "ORM (nested include)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 4061.2128288986,
+        "opsMin": 3474.841866896324,
+        "opsMax": 4647.583790900876,
+        "p50": 2.2122079999999187,
+        "p95": 5.516811000000075,
+        "p99": 6.686815000000024,
+        "max": 10.948481000000129,
+        "cpuUsPerOp": 348.90999999999997,
+        "rssPeakMb": 99.984375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 2481.370759527619,
+        "opsMin": 1958.4539199653132,
+        "opsMax": 3004.2875990899256,
+        "p50": 3.76799949999986,
+        "p95": 8.80302000000006,
+        "p99": 11.502049499999885,
+        "max": 16.284372000000076,
+        "cpuUsPerOp": 660.1783333333333,
+        "rssPeakMb": 181.796875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.large20kNarrow",
+    "group": "read",
+    "level": 1,
+    "description": "20,000 narrow rows (id, user_id, kind, created_at): row decode throughput",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 60.51716558471402,
+        "opsMin": 53.40985897927884,
+        "opsMax": 67.6244721901492,
+        "p50": 16.386026499999844,
+        "p95": 20.645696000000044,
+        "p99": 21.76721049999992,
+        "max": 25.337016999999832,
+        "cpuUsPerOp": 18632.925,
+        "rssPeakMb": 274.1484375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 12.624090428200542,
+        "opsMin": 10.094032315684109,
+        "opsMax": 15.154148540716976,
+        "p50": 77.44778500000075,
+        "p95": 108.04930800000011,
+        "p99": 113.85649750000039,
+        "max": 150.50472000000082,
+        "cpuUsPerOp": 96270.525,
+        "rssPeakMb": 402.27734375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.large20kNarrow",
+    "group": "read",
+    "level": 10,
+    "description": "20,000 narrow rows (id, user_id, kind, created_at): row decode throughput",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 81.04476199474311,
+        "opsMin": 67.1022506376693,
+        "opsMax": 94.98727335181694,
+        "p50": 114.81627600000002,
+        "p95": 164.26671199999987,
+        "p99": 221.62776599999984,
+        "max": 259.34304299999985,
+        "cpuUsPerOp": 19534.983333333334,
+        "rssPeakMb": 247.68359375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 15.126485659212133,
+        "opsMin": 14.425399051689276,
+        "opsMax": 15.827572266734991,
+        "p50": 578.4746434999997,
+        "p95": 1003.1757054999998,
+        "p99": 1194.8783075000001,
+        "max": 1266.4623309999988,
+        "cpuUsPerOp": 78069.96666666667,
+        "rssPeakMb": 403.98828125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.large5kWide",
+    "group": "read",
+    "level": 1,
+    "description": "5,000 events incl. ~1KB jsonb payload each (~5MB result)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 32.76080922137359,
+        "opsMin": 25.89146314185811,
+        "opsMax": 39.63015530088907,
+        "p50": 31.770054000000073,
+        "p95": 38.030158500000084,
+        "p99": 41.6867749999999,
+        "max": 48.485013999999865,
+        "cpuUsPerOp": 34155.45,
+        "rssPeakMb": 188.015625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 22.880402509355612,
+        "opsMin": 22.779494667025304,
+        "opsMax": 22.981310351685924,
+        "p50": 42.03771850000021,
+        "p95": 51.24084949999951,
+        "p99": 56.73441649999995,
+        "max": 57.76719800000046,
+        "cpuUsPerOp": 55012.15,
+        "rssPeakMb": 320.4609375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.large5kWide",
+    "group": "read",
+    "level": 10,
+    "description": "5,000 events incl. ~1KB jsonb payload each (~5MB result)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 49.2113955170983,
+        "opsMin": 32.21527846951139,
+        "opsMax": 66.20751256468522,
+        "p50": 131.5169760000001,
+        "p95": 548.1830190000003,
+        "p99": 595.920752,
+        "max": 931.0071250000001,
+        "cpuUsPerOp": 31846.36666666667,
+        "rssPeakMb": 263.734375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 20.89593219420575,
+        "opsMin": 15.316808806745994,
+        "opsMax": 26.475055581665504,
+        "p50": 363.94721100000015,
+        "p95": 1504.9833245,
+        "p99": 1545.3751925000001,
+        "max": 1957.9265729999997,
+        "cpuUsPerOp": 64987.899999999994,
+        "rssPeakMb": 381.921875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.pk",
+    "group": "read",
+    "level": 1,
+    "description": "Fetch one user by primary key",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 4766.460321257519,
+        "opsMin": 3872.0854506273026,
+        "opsMax": 5660.835191887736,
+        "p50": 0.19222649999997543,
+        "p95": 0.3809320000000014,
+        "p99": 0.4830989999999957,
+        "max": 1.6452990000000227,
+        "cpuUsPerOp": 330.84333333333336,
+        "rssPeakMb": 90.9765625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 2165.9793927809737,
+        "opsMin": 2011.675469378537,
+        "opsMax": 2320.2833161834105,
+        "p50": 0.4338895000000207,
+        "p95": 0.7877740000000131,
+        "p99": 1.130880999999988,
+        "max": 3.2906769999999597,
+        "cpuUsPerOp": 541.3666666666667,
+        "rssPeakMb": 155.23046875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.pk",
+    "group": "read",
+    "level": 10,
+    "description": "Fetch one user by primary key",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 10737.016549186235,
+        "opsMin": 9180.26716872527,
+        "opsMax": 12293.765929647201,
+        "p50": 0.8158029999999883,
+        "p95": 1.8431835000000092,
+        "p99": 2.5349849999999776,
+        "max": 3.306744999999978,
+        "cpuUsPerOp": 130.92916666666667,
+        "rssPeakMb": 92.91796875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 9862.730375137442,
+        "opsMin": 8316.83377472851,
+        "opsMax": 11408.626975546375,
+        "p50": 0.7927169999999819,
+        "p95": 2.2697195000000647,
+        "p99": 3.6174104999999486,
+        "max": 6.860439999999926,
+        "cpuUsPerOp": 272.9475,
+        "rssPeakMb": 163.90234375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.uniqueEmail",
+    "group": "read",
+    "level": 1,
+    "description": "Fetch one user by unique-indexed email",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 4781.659612413874,
+        "opsMin": 4058.9408817492986,
+        "opsMax": 5504.37834307845,
+        "p50": 0.18423000000001366,
+        "p95": 0.36887250000003746,
+        "p99": 0.5404620000000193,
+        "max": 2.420693999999969,
+        "cpuUsPerOp": 339.5566666666667,
+        "rssPeakMb": 101.9140625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 2450.565701652373,
+        "opsMin": 2389.1899476170884,
+        "opsMax": 2511.9414556876573,
+        "p50": 0.3772879999999077,
+        "p95": 0.6499975000000404,
+        "p99": 0.9255464999999958,
+        "max": 2.491309999999885,
+        "cpuUsPerOp": 444.12833333333333,
+        "rssPeakMb": 169.81640625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "read.uniqueEmail",
+    "group": "read",
+    "level": 10,
+    "description": "Fetch one user by unique-indexed email",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 16592.941942052028,
+        "opsMin": 12042.787300712187,
+        "opsMax": 21143.09658339187,
+        "p50": 0.5368925000000218,
+        "p95": 1.193776000000014,
+        "p99": 1.816046999999969,
+        "max": 2.9162220000000616,
+        "cpuUsPerOp": 117.28083333333333,
+        "rssPeakMb": 96.56640625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 7920.623945155645,
+        "opsMin": 7199.319952237297,
+        "opsMax": 8641.927938073992,
+        "p50": 0.9038054999999758,
+        "p95": 2.7135319999999865,
+        "p99": 3.9790175000000545,
+        "max": 6.0606299999999464,
+        "cpuUsPerOp": 229.43666666666667,
+        "rssPeakMb": 168.8671875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.aggregate",
+    "group": "jsonb",
+    "level": 1,
+    "description": "GROUP BY payload->device->>os with avg((payload->metrics->>ttfb)::int) for one kind",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "raw sql"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 120.49161026734552,
+        "opsMin": 97.87915160661329,
+        "opsMax": 143.10406892807777,
+        "p50": 8.25272600000062,
+        "p95": 10.996494500000153,
+        "p99": 12.16051299999981,
+        "max": 15.536942000000636,
+        "cpuUsPerOp": 815.4833333333333,
+        "rssPeakMb": 157.51953125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 162.51433356388787,
+        "opsMin": 154.88684331211695,
+        "opsMax": 170.1418238156588,
+        "p50": 5.719068000000334,
+        "p95": 8.234736500000508,
+        "p99": 8.457275499999014,
+        "max": 8.688172999998642,
+        "cpuUsPerOp": 671.2,
+        "rssPeakMb": 202.9453125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.aggregate",
+    "group": "jsonb",
+    "level": 10,
+    "description": "GROUP BY payload->device->>os with avg((payload->metrics->>ttfb)::int) for one kind",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "raw sql"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 391.7589071495885,
+        "opsMin": 335.9811033476051,
+        "opsMax": 447.53671095157193,
+        "p50": 21.809288500000548,
+        "p95": 35.82864249999875,
+        "p99": 38.54685749999953,
+        "max": 42.62986699999965,
+        "cpuUsPerOp": 581.5166666666667,
+        "rssPeakMb": 139.6171875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 549.4394011857256,
+        "opsMin": 543.3121766364595,
+        "opsMax": 555.5666257349917,
+        "p50": 16.347937000002275,
+        "p95": 23.70802950000143,
+        "p99": 24.630447999999888,
+        "max": 28.413205000000744,
+        "cpuUsPerOp": 822.85,
+        "rssPeakMb": 173.55859375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.contains",
+    "group": "jsonb",
+    "level": 1,
+    "description": "GIN containment: payload @> {\"device\":{\"os\":..},\"geo\":{\"country\":..}} LIMIT 100",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "raw sql (no jsonb operators in ORM)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 70.64167571268706,
+        "opsMin": 69.53845109414294,
+        "opsMax": 71.74490033123118,
+        "p50": 18.874268500000653,
+        "p95": 22.845784500000264,
+        "p99": 25.137726000000384,
+        "max": 27.64942400000109,
+        "cpuUsPerOp": 604.05,
+        "rssPeakMb": 140.1796875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 57.110697360229565,
+        "opsMin": 54.77899463004614,
+        "opsMax": 59.442400090412995,
+        "p50": 20.887290999999095,
+        "p95": 32.18702750000011,
+        "p99": 33.85392250000041,
+        "max": 34.666934000000765,
+        "cpuUsPerOp": 1362.5,
+        "rssPeakMb": 179.3046875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.contains",
+    "group": "jsonb",
+    "level": 10,
+    "description": "GIN containment: payload @> {\"device\":{\"os\":..},\"geo\":{\"country\":..}} LIMIT 100",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "raw sql (no jsonb operators in ORM)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 386.04966543473506,
+        "opsMin": 374.3391977311987,
+        "opsMax": 397.7601331382714,
+        "p50": 23.423869500000364,
+        "p95": 42.65510799999993,
+        "p99": 44.51876249999941,
+        "max": 46.872402999999395,
+        "cpuUsPerOp": 395.68333333333334,
+        "rssPeakMb": 141.05078125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 373.1808130143953,
+        "opsMin": 349.31770799517665,
+        "opsMax": 397.043918033614,
+        "p50": 28.058014999999614,
+        "p95": 36.699633499999436,
+        "p99": 38.37659849999909,
+        "max": 41.63057199999821,
+        "cpuUsPerOp": 1057.0166666666667,
+        "rssPeakMb": 175.9375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.extract",
+    "group": "jsonb",
+    "level": 1,
+    "description": "Project jsonb fields (->, ->>, ::int) for 500 rows of one kind",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "raw sql"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 425.1833961490622,
+        "opsMin": 394.72013090140507,
+        "opsMax": 455.6466613967194,
+        "p50": 2.3880785000001197,
+        "p95": 2.866444500000398,
+        "p99": 3.101344499998959,
+        "max": 3.4200919999984762,
+        "cpuUsPerOp": 820.5933333333334,
+        "rssPeakMb": 151.6796875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 252.1984139834811,
+        "opsMin": 228.1943607313424,
+        "opsMax": 276.20246723561974,
+        "p50": 4.001561999999467,
+        "p95": 4.888623999999254,
+        "p99": 8.779919500002507,
+        "max": 12.516514000002644,
+        "cpuUsPerOp": 2498.293333333333,
+        "rssPeakMb": 201.22265625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.extract",
+    "group": "jsonb",
+    "level": 10,
+    "description": "Project jsonb fields (->, ->>, ::int) for 500 rows of one kind",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "raw sql"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 1772.7490031331336,
+        "opsMin": 1532.8992993689635,
+        "opsMax": 2012.5987068973034,
+        "p50": 5.173077500000545,
+        "p95": 10.059536499999922,
+        "p99": 10.9103640000003,
+        "max": 13.067445000000589,
+        "cpuUsPerOp": 633.5666666666666,
+        "rssPeakMb": 158.79296875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 668.0283083084456,
+        "opsMin": 625.0555309751323,
+        "opsMax": 711.0010856417589,
+        "p50": 13.612496499999907,
+        "p95": 24.87377000000197,
+        "p99": 29.94778849999966,
+        "max": 32.25554099999863,
+        "cpuUsPerOp": 1910.5133333333333,
+        "rssPeakMb": 240.7265625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.insert100k",
+    "group": "jsonb",
+    "level": 1,
+    "description": "Insert one event with a ~100KB jsonb payload",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 70.38457915378264,
+        "opsMin": 65.3623231620713,
+        "opsMax": 75.40683514549397,
+        "p50": 8.109891999999945,
+        "p95": 12.121835999999348,
+        "p99": 182.67789749999974,
+        "max": 200.15638500000023,
+        "cpuUsPerOp": 2236.1666666666665,
+        "rssPeakMb": 172.8515625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 53.132369580558056,
+        "opsMin": 46.11502411437615,
+        "opsMax": 60.14971504673996,
+        "p50": 11.98415549999936,
+        "p95": 15.810566500001187,
+        "p99": 236.4592634999981,
+        "max": 287.84658899999886,
+        "cpuUsPerOp": 3443.05,
+        "rssPeakMb": 204.5078125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.insert100k",
+    "group": "jsonb",
+    "level": 10,
+    "description": "Insert one event with a ~100KB jsonb payload",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 102.87483461384674,
+        "opsMin": 96.39196272504836,
+        "opsMax": 109.35770650264513,
+        "p50": 18.085937999999715,
+        "p95": 30.65114399999993,
+        "p99": 254.8330345000004,
+        "max": 271.72695100000055,
+        "cpuUsPerOp": 2138.15,
+        "rssPeakMb": 162.88671875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 91.5259833888606,
+        "opsMin": 82.10379322343589,
+        "opsMax": 100.9481735542853,
+        "p50": 21.642237999998542,
+        "p95": 39.13583550000021,
+        "p99": 282.43661750000047,
+        "max": 311.4807950000013,
+        "cpuUsPerOp": 2559.9166666666665,
+        "rssPeakMb": 191.6171875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.insert1k",
+    "group": "jsonb",
+    "level": 1,
+    "description": "Insert one event with ~1KB nested jsonb payload",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 1331.7592048054134,
+        "opsMin": 1308.9785996790404,
+        "opsMax": 1354.5398099317865,
+        "p50": 0.6929434999999557,
+        "p95": 1.1784565000000384,
+        "p99": 1.4399969999999485,
+        "max": 2.57596999999987,
+        "cpuUsPerOp": 395.7916666666667,
+        "rssPeakMb": 211.74609375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 1244.9184390572807,
+        "opsMin": 1141.8722877963912,
+        "opsMax": 1347.9645903181702,
+        "p50": 0.7756570000001375,
+        "p95": 1.1796049999993556,
+        "p99": 1.5393779999994877,
+        "max": 2.072503000001234,
+        "cpuUsPerOp": 434.7,
+        "rssPeakMb": 404.328125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.insert1k",
+    "group": "jsonb",
+    "level": 10,
+    "description": "Insert one event with ~1KB nested jsonb payload",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 6652.232099257244,
+        "opsMin": 6377.853371875422,
+        "opsMax": 6926.610826639065,
+        "p50": 1.208082500000046,
+        "p95": 2.7305950000004486,
+        "p99": 3.450261500000124,
+        "max": 4.042769000000135,
+        "cpuUsPerOp": 179.65166666666664,
+        "rssPeakMb": 160.8203125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 6098.101645839139,
+        "opsMin": 5870.052648697826,
+        "opsMax": 6326.150642980451,
+        "p50": 1.2064604999995936,
+        "p95": 3.9488005000002886,
+        "p99": 4.61681899999985,
+        "max": 5.844296000001123,
+        "cpuUsPerOp": 245.60833333333335,
+        "rssPeakMb": 404.1796875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.insertBulk200",
+    "group": "jsonb",
+    "level": 1,
+    "description": "Insert 200 events (~1KB jsonb each, ~200KB) in one statement",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM (createAndCount)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 35.21304059857326,
+        "opsMin": 34.115211320141555,
+        "opsMax": 36.31086987700496,
+        "p50": 15.320690999999442,
+        "p95": 111.29912950000016,
+        "p99": 135.12747799999988,
+        "max": 147.62644199999977,
+        "cpuUsPerOp": 6672.155555555555,
+        "rssPeakMb": 163.78125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 29.51119327137539,
+        "opsMin": 24.59535589309449,
+        "opsMax": 34.42703064965629,
+        "p50": 19.177158500000587,
+        "p95": 131.51201850000052,
+        "p99": 164.31100799999967,
+        "max": 213.141705,
+        "cpuUsPerOp": 9609.644444444444,
+        "rssPeakMb": 217.65234375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.insertBulk200",
+    "group": "jsonb",
+    "level": 10,
+    "description": "Insert 200 events (~1KB jsonb each, ~200KB) in one statement",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM (createAndCount)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 50.28830953517698,
+        "opsMin": 47.17608346511786,
+        "opsMax": 53.4005356052361,
+        "p50": 60.01735050000025,
+        "p95": 96.1892284999999,
+        "p99": 894.2390564999992,
+        "max": 945.839058999999,
+        "cpuUsPerOp": 8415.7,
+        "rssPeakMb": 181.9609375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 48.45718725296275,
+        "opsMin": 42.581470216194276,
+        "opsMax": 54.33290428973122,
+        "p50": 68.77495650000037,
+        "p95": 120.34058650000043,
+        "p99": 929.0522489999994,
+        "max": 1041.8559409999998,
+        "cpuUsPerOp": 9401.111111111111,
+        "rssPeakMb": 239.46875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.pathFilter",
+    "group": "jsonb",
+    "level": 1,
+    "description": "kind = X AND payload #>> {session,referrer} = Y (btree + jsonb filter), LIMIT 200",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "raw sql"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 187.75710286153463,
+        "opsMin": 184.99434615962713,
+        "opsMax": 190.51985956344217,
+        "p50": 6.229038000000401,
+        "p95": 9.216395500000544,
+        "p99": 9.820115499999702,
+        "max": 10.016998000000967,
+        "cpuUsPerOp": 560.8433333333332,
+        "rssPeakMb": 155.3671875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 199.35319253295182,
+        "opsMin": 188.4219220856962,
+        "opsMax": 210.28446298020745,
+        "p50": 5.032153999998627,
+        "p95": 6.310983000001215,
+        "p99": 6.642268000000513,
+        "max": 7.500920000002225,
+        "cpuUsPerOp": 949.19,
+        "rssPeakMb": 189.71875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.pathFilter",
+    "group": "jsonb",
+    "level": 10,
+    "description": "kind = X AND payload #>> {session,referrer} = Y (btree + jsonb filter), LIMIT 200",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "raw sql"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 1232.4262907431162,
+        "opsMin": 1202.5051934996832,
+        "opsMax": 1262.3473879865492,
+        "p50": 8.929329500000676,
+        "p95": 12.92634899999939,
+        "p99": 17.151530000000093,
+        "max": 22.89278899999954,
+        "cpuUsPerOp": 327.3933333333333,
+        "rssPeakMb": 154.734375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 988.123392221569,
+        "opsMin": 889.9330770326088,
+        "opsMax": 1086.3137074105293,
+        "p50": 9.424729500000467,
+        "p95": 14.949595000000045,
+        "p99": 18.730428000000757,
+        "max": 23.05289900000207,
+        "cpuUsPerOp": 988.6233333333332,
+        "rssPeakMb": 195.15625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.update",
+    "group": "jsonb",
+    "level": 1,
+    "description": "Partial jsonb update with jsonb_set on one event",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "raw sql (jsonb_set)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 1424.4599803478234,
+        "opsMin": 1156.6985413071357,
+        "opsMax": 1692.221419388511,
+        "p50": 0.6747504999993907,
+        "p95": 1.144228999999541,
+        "p99": 1.37615950000054,
+        "max": 2.855743000000075,
+        "cpuUsPerOp": 283.84000000000003,
+        "rssPeakMb": 158.41015625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 1342.8175589748462,
+        "opsMin": 1315.4967064303642,
+        "opsMax": 1370.138411519328,
+        "p50": 0.7232909999984258,
+        "p95": 0.9936159999997471,
+        "p99": 1.17486899999858,
+        "max": 1.5078709999979765,
+        "cpuUsPerOp": 260.8433333333333,
+        "rssPeakMb": 238.23828125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "jsonb.update",
+    "group": "jsonb",
+    "level": 10,
+    "description": "Partial jsonb update with jsonb_set on one event",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "raw sql (jsonb_set)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 8800.061308579334,
+        "opsMin": 7930.504460710422,
+        "opsMax": 9669.618156448245,
+        "p50": 1.0491499999998268,
+        "p95": 1.880600499999673,
+        "p99": 2.5715204999996786,
+        "max": 4.032949000000372,
+        "cpuUsPerOp": 128.84,
+        "rssPeakMb": 158.40625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 7010.4940853518,
+        "opsMin": 6872.9890636313385,
+        "opsMax": 7147.999107072262,
+        "p50": 1.360507499999585,
+        "p95": 2.1343274999999267,
+        "p99": 2.8336655000002793,
+        "max": 3.7304089999997814,
+        "cpuUsPerOp": 219.06666666666666,
+        "rssPeakMb": 223.59765625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "search.faceted",
+    "group": "search",
+    "level": 1,
+    "description": "Faceted product search: category IN (3) AND price range AND stock AND attributes @> {color}",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "raw sql (jsonb @>)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 2601.6311342701642,
+        "opsMin": 2556.015288038688,
+        "opsMax": 2647.2469805016403,
+        "p50": 0.35801699999956327,
+        "p95": 0.5338719999999739,
+        "p99": 0.6681105000006937,
+        "max": 0.824507999999696,
+        "cpuUsPerOp": 291.9433333333333,
+        "rssPeakMb": 148.3203125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 1389.8871163905396,
+        "opsMin": 1221.894093877147,
+        "opsMax": 1557.880138903932,
+        "p50": 0.6964130000014848,
+        "p95": 1.0933599999989383,
+        "p99": 1.2080635000020266,
+        "max": 1.4975540000014007,
+        "cpuUsPerOp": 489.43666666666667,
+        "rssPeakMb": 174.12109375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "search.faceted",
+    "group": "search",
+    "level": 10,
+    "description": "Faceted product search: category IN (3) AND price range AND stock AND attributes @> {color}",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "raw sql (jsonb @>)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 7964.428135878436,
+        "opsMin": 5203.737421352596,
+        "opsMax": 10725.118850404275,
+        "p50": 1.1759104999991905,
+        "p95": 2.535311499999807,
+        "p99": 3.292090000000826,
+        "max": 4.211573000000499,
+        "cpuUsPerOp": 141.93,
+        "rssPeakMb": 151.05859375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 5602.822399052521,
+        "opsMin": 4279.554173164384,
+        "opsMax": 6926.090624940658,
+        "p50": 1.5808595000016794,
+        "p95": 3.826382499999454,
+        "p99": 4.711486500000319,
+        "max": 5.234338000002026,
+        "cpuUsPerOp": 195.43666666666667,
+        "rssPeakMb": 175.19921875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "search.fullText",
+    "group": "search",
+    "level": 1,
+    "description": "Full-text (GIN tsvector) websearch query, ranked top 20",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "ORM (native fullText*)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 50.057277867252466,
+        "opsMin": 43.881690626559795,
+        "opsMax": 56.232865107945145,
+        "p50": 15.804477500000758,
+        "p95": 43.48998500000016,
+        "p99": 55.68174799999997,
+        "max": 66.39455199999975,
+        "cpuUsPerOp": 591.125,
+        "rssPeakMb": 138.8671875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 67.24432902509542,
+        "opsMin": 66.97402856674697,
+        "opsMax": 67.51462948344387,
+        "p50": 10.259415500002433,
+        "p95": 33.262401499998305,
+        "p99": 37.92183749999822,
+        "max": 40.831804999997985,
+        "cpuUsPerOp": 1285,
+        "rssPeakMb": 167.16796875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "search.fullText",
+    "group": "search",
+    "level": 10,
+    "description": "Full-text (GIN tsvector) websearch query, ranked top 20",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "ORM (native fullText*)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 268.047519845737,
+        "opsMin": 266.6165143228769,
+        "opsMax": 269.47852536859705,
+        "p50": 29.84631199999967,
+        "p95": 64.33280749999994,
+        "p99": 79.17003950000071,
+        "max": 85.49346700000024,
+        "cpuUsPerOp": 327.6333333333333,
+        "rssPeakMb": 139.22265625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 304.7528109733223,
+        "opsMin": 259.47293297720495,
+        "opsMax": 350.03268896943973,
+        "p50": 22.12688249999883,
+        "p95": 52.236000499999136,
+        "p99": 60.2198395000014,
+        "max": 70.99784500000169,
+        "cpuUsPerOp": 975.1333333333332,
+        "rssPeakMb": 167.390625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "search.fullTextHeadline",
+    "group": "search",
+    "level": 1,
+    "description": "Full-text match + ts_headline snippets for top 10 (CPU heavy in Postgres)",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "SQL builder (fullTextHeadline)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 61.12475769859303,
+        "opsMin": 60.000761289659174,
+        "opsMax": 62.24875410752688,
+        "p50": 17.34483849999924,
+        "p95": 33.13795049999953,
+        "p99": 35.27348299999994,
+        "max": 35.877464000001055,
+        "cpuUsPerOp": 572.775,
+        "rssPeakMb": 139.07421875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 71.85291538840161,
+        "opsMin": 62.93936020170385,
+        "opsMax": 80.76647057509938,
+        "p50": 15.270698000000266,
+        "p95": 26.405039999999644,
+        "p99": 28.08564800000022,
+        "max": 31.23374799999874,
+        "cpuUsPerOp": 1327.9,
+        "rssPeakMb": 166.8515625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "search.fullTextHeadline",
+    "group": "search",
+    "level": 10,
+    "description": "Full-text match + ts_headline snippets for top 10 (CPU heavy in Postgres)",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "SQL builder (fullTextHeadline)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 361.35990043888614,
+        "opsMin": 325.4168101212452,
+        "opsMax": 397.30299075652715,
+        "p50": 24.5357640000002,
+        "p95": 44.32661449999978,
+        "p99": 45.47997299999952,
+        "max": 50.59540199999901,
+        "cpuUsPerOp": 262.25,
+        "rssPeakMb": 139.1015625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 395.4850474539134,
+        "opsMin": 337.79068788765034,
+        "opsMax": 453.1794070201765,
+        "p50": 22.0684465000013,
+        "p95": 38.92051750000064,
+        "p99": 41.34004450000066,
+        "max": 46.368359000000055,
+        "cpuUsPerOp": 748.4833333333333,
+        "rssPeakMb": 166.5625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "search.ilike",
+    "group": "search",
+    "level": 1,
+    "description": "Unindexed ILIKE '%term%' over products.name (seq scan), LIMIT 50",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 793.7743516253552,
+        "opsMin": 764.8771746465088,
+        "opsMax": 822.6715286042014,
+        "p50": 1.2487579999997251,
+        "p95": 1.462721999999303,
+        "p99": 1.7111430000004475,
+        "max": 1.7644860000000335,
+        "cpuUsPerOp": 316.53999999999996,
+        "rssPeakMb": 141.08984375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 622.3407490379748,
+        "opsMin": 544.7441396697778,
+        "opsMax": 699.9373584061717,
+        "p50": 1.6498985000016546,
+        "p95": 1.988224500000797,
+        "p99": 2.175230000000738,
+        "max": 2.393742000000202,
+        "cpuUsPerOp": 598.5066666666667,
+        "rssPeakMb": 169.41015625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "search.ilike",
+    "group": "search",
+    "level": 10,
+    "description": "Unindexed ILIKE '%term%' over products.name (seq scan), LIMIT 50",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 5793.461817543864,
+        "opsMin": 5401.699936576548,
+        "opsMax": 6185.2236985111795,
+        "p50": 1.3886709999997038,
+        "p95": 3.06751499999973,
+        "p99": 3.428185499999927,
+        "max": 3.5077280000004976,
+        "cpuUsPerOp": 158.23333333333335,
+        "rssPeakMb": 141.3359375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 4060.749154311323,
+        "opsMin": 3796.0362396948385,
+        "opsMax": 4325.462068927807,
+        "p50": 2.092024499999752,
+        "p95": 4.034280999998373,
+        "p99": 5.337992499999018,
+        "max": 5.375262999998085,
+        "cpuUsPerOp": 596.9733333333334,
+        "rssPeakMb": 174.015625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "html.fetchByAuthor",
+    "group": "html",
+    "level": 1,
+    "description": "Fetch up to 10 full HTML documents for an author (index author_id)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 1196.957667545515,
+        "opsMin": 1006.4530144052873,
+        "opsMax": 1387.4623206857427,
+        "p50": 0.8145480000002863,
+        "p95": 1.368577500000356,
+        "p99": 2.8744034999999712,
+        "max": 4.503536000000167,
+        "cpuUsPerOp": 463,
+        "rssPeakMb": 173.21484375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 893.0095741226426,
+        "opsMin": 798.655507113597,
+        "opsMax": 987.3636411316882,
+        "p50": 1.0477630000004865,
+        "p95": 1.9565425000000687,
+        "p99": 2.337282000000414,
+        "max": 2.528776999999536,
+        "cpuUsPerOp": 678.9733333333334,
+        "rssPeakMb": 220.9921875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "html.fetchByAuthor",
+    "group": "html",
+    "level": 10,
+    "description": "Fetch up to 10 full HTML documents for an author (index author_id)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 4095.964303877364,
+        "opsMin": 3846.8186553266582,
+        "opsMax": 4345.109952428069,
+        "p50": 1.9256079999995563,
+        "p95": 3.8402594999997746,
+        "p99": 4.278707999999824,
+        "max": 4.356134999999995,
+        "cpuUsPerOp": 280.2733333333333,
+        "rssPeakMb": 168.3984375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 2670.330714623856,
+        "opsMin": 2154.6819140769185,
+        "opsMax": 3185.979515170793,
+        "p50": 3.3320665000010194,
+        "p95": 7.110745999998471,
+        "p99": 9.07387000000017,
+        "max": 9.954388999998628,
+        "cpuUsPerOp": 449.66,
+        "rssPeakMb": 214.56640625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "html.fetchBySlug",
+    "group": "html",
+    "level": 1,
+    "description": "Fetch one HTML document (20-60KB) by unique slug",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 1396.2971597453961,
+        "opsMin": 1145.7395354567004,
+        "opsMax": 1646.854784034092,
+        "p50": 0.6977879999994911,
+        "p95": 1.1272005000000718,
+        "p99": 1.6248279999999795,
+        "max": 6.710203000000547,
+        "cpuUsPerOp": 402.7166666666667,
+        "rssPeakMb": 172.7578125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 1286.6242657349312,
+        "opsMin": 1278.7411676388408,
+        "opsMax": 1294.5073638310218,
+        "p50": 0.7521020000003773,
+        "p95": 1.0969399999994494,
+        "p99": 1.49664699999812,
+        "max": 2.3174269999981334,
+        "cpuUsPerOp": 488.145,
+        "rssPeakMb": 202.734375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "html.fetchBySlug",
+    "group": "html",
+    "level": 10,
+    "description": "Fetch one HTML document (20-60KB) by unique slug",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 4579.794363295216,
+        "opsMin": 4191.764331631793,
+        "opsMax": 4967.8243949586395,
+        "p50": 1.7989900000002308,
+        "p95": 3.716339000001426,
+        "p99": 5.797367000001032,
+        "max": 8.401444000000993,
+        "cpuUsPerOp": 225.38833333333332,
+        "rssPeakMb": 173.47265625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 4526.830086584409,
+        "opsMin": 3614.6556357336513,
+        "opsMax": 5439.004537435168,
+        "p50": 1.7715680000001157,
+        "p95": 4.975017500000831,
+        "p99": 9.38611999999921,
+        "max": 20.017016000001604,
+        "cpuUsPerOp": 310.62833333333333,
+        "rssPeakMb": 221.38671875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "html.insertDoc",
+    "group": "html",
+    "level": 1,
+    "description": "Insert a ~30KB HTML article (+ plain text for FTS index maintenance)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 142.85175462641132,
+        "opsMin": 138.13775588787493,
+        "opsMax": 147.56575336494774,
+        "p50": 6.876599999999598,
+        "p95": 9.337321500000144,
+        "p99": 9.823581499999818,
+        "max": 10.215455999999904,
+        "cpuUsPerOp": 2215.9,
+        "rssPeakMb": 157.015625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 164.51637822392183,
+        "opsMin": 153.3751385335391,
+        "opsMax": 175.6576179143046,
+        "p50": 6.00246049999987,
+        "p95": 8.426339499999813,
+        "p99": 8.866813000000548,
+        "max": 9.546503000001394,
+        "cpuUsPerOp": 1817.1,
+        "rssPeakMb": 184.24609375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "html.insertDoc",
+    "group": "html",
+    "level": 10,
+    "description": "Insert a ~30KB HTML article (+ plain text for FTS index maintenance)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 687.8915572130027,
+        "opsMin": 612.75637863049,
+        "opsMax": 763.0267357955153,
+        "p50": 12.741598000000522,
+        "p95": 17.87890349999907,
+        "p99": 21.641475499999615,
+        "max": 22.573575000000346,
+        "cpuUsPerOp": 1546.3,
+        "rssPeakMb": 161.7578125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 812.7305877797176,
+        "opsMin": 798.3716482827974,
+        "opsMax": 827.0895272766376,
+        "p50": 11.201922499998545,
+        "p95": 16.28098300000056,
+        "p99": 20.42102750000049,
+        "max": 21.859591000000364,
+        "cpuUsPerOp": 1395.8111111111111,
+        "rssPeakMb": 188.9765625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "html.searchAndFetch",
+    "group": "html",
+    "level": 1,
+    "description": "Two-step: FTS top hit id, then fetch its full HTML",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "ORM (native fullText*)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 2.5351044656933013,
+        "opsMin": 2.419943928294759,
+        "opsMax": 2.6502650030918433,
+        "p50": 374.60663999999906,
+        "p95": 484.7069315000008,
+        "p99": 534.1948824999981,
+        "max": 639.0262709999988,
+        "cpuUsPerOp": 3993.55,
+        "rssPeakMb": 144.62890625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 2.422155619650921,
+        "opsMin": 2.2066656532915085,
+        "opsMax": 2.6376455860103327,
+        "p50": 398.1232654999985,
+        "p95": 518.9566685000009,
+        "p99": 547.0241475000003,
+        "max": 634.3472750000001,
+        "cpuUsPerOp": 8300.225,
+        "rssPeakMb": 165.94140625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "html.searchAndFetch",
+    "group": "html",
+    "level": 10,
+    "description": "Two-step: FTS top hit id, then fetch its full HTML",
+    "lanes": {
+      "drizzle": "query builder + sql fragment",
+      "prisma": "ORM (native fullText*)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 10.1988035487989,
+        "opsMin": 9.977986964278882,
+        "opsMax": 10.419620133318917,
+        "p50": 910.8562130000009,
+        "p95": 1079.6076519999988,
+        "p99": 1122.9498145000016,
+        "max": 1139.3273320000008,
+        "cpuUsPerOp": 1528.4833333333333,
+        "rssPeakMb": 138.08203125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 10.320753684334449,
+        "opsMin": 10.14595144261478,
+        "opsMax": 10.495555926054116,
+        "p50": 894.3111735000002,
+        "p95": 1046.6630325000024,
+        "p99": 1088.2820905000008,
+        "max": 1096.0681939999995,
+        "cpuUsPerOp": 2939.5333333333338,
+        "rssPeakMb": 166.05859375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "html.update",
+    "group": "html",
+    "level": 1,
+    "description": "Rewrite the HTML body of one existing document (~30KB UPDATE, FTS index maintained)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 122.45533230422048,
+        "opsMin": 106.3697750407137,
+        "opsMax": 138.54088956772725,
+        "p50": 5.828141999999389,
+        "p95": 8.479425999999876,
+        "p99": 109.50532099999964,
+        "max": 120.97677899999871,
+        "cpuUsPerOp": 1453.4333333333334,
+        "rssPeakMb": 167.921875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 118.4823992908322,
+        "opsMin": 113.61804932493816,
+        "opsMax": 123.34674925672626,
+        "p50": 6.758968000001914,
+        "p95": 9.24329299999772,
+        "p99": 86.02309549999882,
+        "max": 88.10124799999903,
+        "cpuUsPerOp": 2305.5555555555557,
+        "rssPeakMb": 199.3203125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "html.update",
+    "group": "html",
+    "level": 10,
+    "description": "Rewrite the HTML body of one existing document (~30KB UPDATE, FTS index maintained)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 938.6401023287826,
+        "opsMin": 762.4190308871254,
+        "opsMax": 1114.86117377044,
+        "p50": 10.250067999999374,
+        "p95": 14.427570500000002,
+        "p99": 17.364920500000153,
+        "max": 21.93111400000089,
+        "cpuUsPerOp": 997.9888888888888,
+        "rssPeakMb": 162.8515625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 674.6050325707283,
+        "opsMin": 646.991278485663,
+        "opsMax": 702.2187866557936,
+        "p50": 13.280195999999705,
+        "p95": 18.12808749999931,
+        "p99": 18.618505000002187,
+        "max": 19.989064000001235,
+        "cpuUsPerOp": 1602.0555555555557,
+        "rssPeakMb": 187.03515625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "write.insertBulk200",
+    "group": "write",
+    "level": 1,
+    "description": "Insert 200 order_items rows in one statement (FK + 2 indexes)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM (createAndCount)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 136.3820742173991,
+        "opsMin": 111.33836045725334,
+        "opsMax": 161.42578797754484,
+        "p50": 7.635543000000325,
+        "p95": 9.334952499999417,
+        "p99": 10.48225100000127,
+        "max": 11.464035000000877,
+        "cpuUsPerOp": 3589.3066666666664,
+        "rssPeakMb": 160.89453125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 107.13368203348219,
+        "opsMin": 91.07636496245264,
+        "opsMax": 123.19099910451172,
+        "p50": 9.721013500005938,
+        "p95": 12.864278000000922,
+        "p99": 15.557559999997466,
+        "max": 16.01550299999508,
+        "cpuUsPerOp": 4778.953333333333,
+        "rssPeakMb": 223.88671875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "write.insertBulk200",
+    "group": "write",
+    "level": 10,
+    "description": "Insert 200 order_items rows in one statement (FK + 2 indexes)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM (createAndCount)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 612.0690259652993,
+        "opsMin": 543.8287466744359,
+        "opsMax": 680.3093052561627,
+        "p50": 15.66639700000087,
+        "p95": 28.910227999998824,
+        "p99": 33.453660500001206,
+        "max": 37.020556000003126,
+        "cpuUsPerOp": 1815.3733333333334,
+        "rssPeakMb": 161.29296875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 255.72680841583218,
+        "opsMin": 164.41874202926766,
+        "opsMax": 347.0348748023967,
+        "p50": 39.39334500000041,
+        "p95": 85.19139799999903,
+        "p99": 100.26356550000128,
+        "max": 154.28521500000352,
+        "cpuUsPerOp": 4689.106666666667,
+        "rssPeakMb": 228.91015625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "write.insertDelete",
+    "group": "write",
+    "level": 1,
+    "description": "Insert an event then delete it by id (2 round trips, no tx)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 790.9799580479071,
+        "opsMin": 624.9795215043379,
+        "opsMax": 956.9803945914764,
+        "p50": 1.1233510000001843,
+        "p95": 2.183557500000461,
+        "p99": 3.3630820000016683,
+        "max": 6.094356000001426,
+        "cpuUsPerOp": 517.1166666666667,
+        "rssPeakMb": 158.0078125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 388.3594379010776,
+        "opsMin": 314.696936025035,
+        "opsMax": 462.0219397771203,
+        "p50": 2.508804000000964,
+        "p95": 3.9085029999987455,
+        "p99": 5.46027850000246,
+        "max": 7.153713000006974,
+        "cpuUsPerOp": 1467.3600000000001,
+        "rssPeakMb": 201.44921875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "write.insertDelete",
+    "group": "write",
+    "level": 10,
+    "description": "Insert an event then delete it by id (2 round trips, no tx)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 4283.01811259432,
+        "opsMin": 3745.131703298698,
+        "opsMax": 4820.904521889943,
+        "p50": 2.0455000000001746,
+        "p95": 3.852170500000284,
+        "p99": 4.65276300000005,
+        "max": 4.838857000002463,
+        "cpuUsPerOp": 403.3266666666667,
+        "rssPeakMb": 159.49609375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 1214.5843435584163,
+        "opsMin": 1015.6482758019602,
+        "opsMax": 1413.5204113148725,
+        "p50": 7.779337000003579,
+        "p95": 13.323145499998645,
+        "p99": 15.19575800000166,
+        "max": 19.445785999996588,
+        "cpuUsPerOp": 972.2766666666666,
+        "rssPeakMb": 200.1171875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "write.insertOne",
+    "group": "write",
+    "level": 1,
+    "description": "Insert one user (unique email, small jsonb profile) RETURNING row",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 1626.2466266007248,
+        "opsMin": 1387.4140292365328,
+        "opsMax": 1865.0792239649168,
+        "p50": 0.6119204999977228,
+        "p95": 0.8197715000005701,
+        "p99": 0.9805820000001404,
+        "max": 2.508934000001318,
+        "cpuUsPerOp": 424.4916666666667,
+        "rssPeakMb": 153.19140625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 1071.16038849846,
+        "opsMin": 992.695406374481,
+        "opsMax": 1149.625370622439,
+        "p50": 0.9087029999973311,
+        "p95": 1.2526010000001406,
+        "p99": 1.4827335000009043,
+        "max": 1.7691210000048159,
+        "cpuUsPerOp": 508.48333333333335,
+        "rssPeakMb": 174.96875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "write.insertOne",
+    "group": "write",
+    "level": 10,
+    "description": "Insert one user (unique email, small jsonb profile) RETURNING row",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 7507.055913648313,
+        "opsMin": 5933.74146925767,
+        "opsMax": 9080.370358038957,
+        "p50": 1.1745389999978215,
+        "p95": 2.5634589999990567,
+        "p99": 3.2178640000001906,
+        "max": 5.33628200000021,
+        "cpuUsPerOp": 140.2,
+        "rssPeakMb": 154.671875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 4828.934862231154,
+        "opsMin": 3089.506207930068,
+        "opsMax": 6568.3635165322385,
+        "p50": 1.8695020000013756,
+        "p95": 4.595974500000011,
+        "p99": 5.436884000002465,
+        "max": 7.0549210000026505,
+        "cpuUsPerOp": 286.0733333333333,
+        "rssPeakMb": 177.19140625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "write.updateMany",
+    "group": "write",
+    "level": 1,
+    "description": "UPDATE ... WHERE category = X (touches ~5% of products)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM (updateAndCount)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 1056.5089621101624,
+        "opsMin": 802.758664093981,
+        "opsMax": 1310.2592601263439,
+        "p50": 0.9039754999994329,
+        "p95": 1.571372500000507,
+        "p99": 2.309755000000223,
+        "max": 3.4966280000007828,
+        "cpuUsPerOp": 251.2166666666667,
+        "rssPeakMb": 160.671875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 782.1993309697252,
+        "opsMin": 664.8296094897806,
+        "opsMax": 899.5690524496698,
+        "p50": 1.275710000001709,
+        "p95": 1.668643000000884,
+        "p99": 1.9152420000027632,
+        "max": 2.05672400000185,
+        "cpuUsPerOp": 402.7,
+        "rssPeakMb": 199.55859375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "write.updateMany",
+    "group": "write",
+    "level": 10,
+    "description": "UPDATE ... WHERE category = X (touches ~5% of products)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM (updateAndCount)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 2822.9410577904027,
+        "opsMin": 2545.3870078521886,
+        "opsMax": 3100.495107728617,
+        "p50": 2.897100499998487,
+        "p95": 6.28389849999985,
+        "p99": 6.731680500000948,
+        "max": 7.676494999999704,
+        "cpuUsPerOp": 180.11666666666667,
+        "rssPeakMb": 158.328125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 2181.632310068614,
+        "opsMin": 1778.584912786142,
+        "opsMax": 2584.679707351086,
+        "p50": 3.833725999997114,
+        "p95": 7.264605500004109,
+        "p99": 8.626358499997878,
+        "max": 11.694675999999163,
+        "cpuUsPerOp": 450.54999999999995,
+        "rssPeakMb": 199.50390625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "write.updateOne",
+    "group": "write",
+    "level": 1,
+    "description": "Update one product row by primary key",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 1408.8752765952133,
+        "opsMin": 1060.0460318629043,
+        "opsMax": 1757.7045213275223,
+        "p50": 0.656066000001374,
+        "p95": 1.2300880000002508,
+        "p99": 2.350495000000592,
+        "max": 5.042658999998821,
+        "cpuUsPerOp": 339.44,
+        "rssPeakMb": 161.3203125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 521.5374611824465,
+        "opsMin": 464.5345090144295,
+        "opsMax": 578.5404133504635,
+        "p50": 1.781344999999419,
+        "p95": 3.0231410000014876,
+        "p99": 4.418661499999871,
+        "max": 5.631122000006144,
+        "cpuUsPerOp": 1188.6766666666667,
+        "rssPeakMb": 211.171875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "write.updateOne",
+    "group": "write",
+    "level": 10,
+    "description": "Update one product row by primary key",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 7003.74113399483,
+        "opsMin": 5489.278113269224,
+        "opsMax": 8518.204154720435,
+        "p50": 1.153760000001057,
+        "p95": 2.872395000000324,
+        "p99": 4.247576999998273,
+        "max": 6.854707000002236,
+        "cpuUsPerOp": 160.41166666666666,
+        "rssPeakMb": 161.30078125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 2669.6968813999315,
+        "opsMin": 1377.423186400503,
+        "opsMax": 3961.97057639936,
+        "p50": 4.412279000000126,
+        "p95": 8.791789500002778,
+        "p99": 11.117773000001762,
+        "max": 17.287406000003102,
+        "cpuUsPerOp": 569.8916666666667,
+        "rssPeakMb": 204.453125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "write.upsert",
+    "group": "write",
+    "level": 1,
+    "description": "Upsert product by unique sku (half hit existing, half insert)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM (upsert)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 1380.344429579041,
+        "opsMin": 1149.2660457575641,
+        "opsMax": 1611.4228134005177,
+        "p50": 0.6774765000009211,
+        "p95": 1.14169050000055,
+        "p99": 1.849699000000328,
+        "max": 2.859948000001168,
+        "cpuUsPerOp": 347.47,
+        "rssPeakMb": 157.55859375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 833.5686695292009,
+        "opsMin": 643.6967072767704,
+        "opsMax": 1023.4406317816312,
+        "p50": 1.2017120000018622,
+        "p95": 1.829668500005937,
+        "p99": 2.288920999999391,
+        "max": 3.896326999994926,
+        "cpuUsPerOp": 733.4666666666667,
+        "rssPeakMb": 200.74609375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "write.upsert",
+    "group": "write",
+    "level": 10,
+    "description": "Upsert product by unique sku (half hit existing, half insert)",
+    "lanes": {
+      "drizzle": "query builder",
+      "prisma": "ORM (upsert)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 6184.0283503998135,
+        "opsMin": 4451.97560424257,
+        "opsMax": 7916.081096557057,
+        "p50": 1.3004910000017844,
+        "p95": 4.388513499998226,
+        "p99": 5.450550500001555,
+        "max": 7.475123000000167,
+        "cpuUsPerOp": 171.26333333333332,
+        "rssPeakMb": 157.8046875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 4064.4155066295853,
+        "opsMin": 1079.679583058263,
+        "opsMax": 7049.151430200907,
+        "p50": 4.76445700000113,
+        "p95": 11.025496499998553,
+        "p99": 13.212892499999725,
+        "max": 26.24681799999962,
+        "cpuUsPerOp": 489.6433333333333,
+        "rssPeakMb": 199.8359375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "tx.batch20",
+    "group": "tx",
+    "level": 1,
+    "description": "One tx wrapping 20 single-row inserts (per-statement overhead inside a tx)",
+    "lanes": {
+      "drizzle": "transaction + query builder",
+      "prisma": "transaction + ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 152.70952127438653,
+        "opsMin": 132.70774430816795,
+        "opsMax": 172.71129824060515,
+        "p50": 6.500157500000569,
+        "p95": 8.163366500000848,
+        "p99": 8.508269500001916,
+        "max": 9.933570000001055,
+        "cpuUsPerOp": 3755.5666666666666,
+        "rssPeakMb": 161.109375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 98.39989638791135,
+        "opsMin": 94.52440715662503,
+        "opsMax": 102.27538561919768,
+        "p50": 9.998783999999432,
+        "p95": 12.284027500001685,
+        "p99": 13.517522999998619,
+        "max": 13.791447999996308,
+        "cpuUsPerOp": 6621.483333333334,
+        "rssPeakMb": 204.2421875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "tx.batch20",
+    "group": "tx",
+    "level": 10,
+    "description": "One tx wrapping 20 single-row inserts (per-statement overhead inside a tx)",
+    "lanes": {
+      "drizzle": "transaction + query builder",
+      "prisma": "transaction + ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 566.5095950786283,
+        "opsMin": 501.7426441894223,
+        "opsMax": 631.2765459678344,
+        "p50": 15.80967249999776,
+        "p95": 25.463557000000947,
+        "p99": 28.60911600000145,
+        "max": 30.889382000001206,
+        "cpuUsPerOp": 2089.0666666666666,
+        "rssPeakMb": 161.01953125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 579.8330265875007,
+        "opsMin": 455.19449983026595,
+        "opsMax": 704.4715533447355,
+        "p50": 14.312731999994867,
+        "p95": 29.93097249999846,
+        "p99": 30.12859749999916,
+        "max": 40.45226900000125,
+        "cpuUsPerOp": 2015.6166666666666,
+        "rssPeakMb": 204.84765625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "tx.checkout",
+    "group": "tx",
+    "level": 1,
+    "description": "Interactive tx: insert order, bulk-insert 4 items, decrement 4 product stocks, set total (8 statements)",
+    "lanes": {
+      "drizzle": "transaction + query builder",
+      "prisma": "transaction + ORM + raw sql (atomic arithmetic)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 427.8794899934976,
+        "opsMin": 375.0507837513742,
+        "opsMax": 480.708196235621,
+        "p50": 2.1294960000013816,
+        "p95": 3.699842500000159,
+        "p99": 6.815315499998178,
+        "max": 9.117559999998775,
+        "cpuUsPerOp": 1194.6066666666666,
+        "rssPeakMb": 158.7890625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 244.0780758434882,
+        "opsMin": 230.69649322966453,
+        "opsMax": 257.4596584573119,
+        "p50": 3.7700914999986708,
+        "p95": 6.624597499998345,
+        "p99": 8.704764999998588,
+        "max": 9.591604000001098,
+        "cpuUsPerOp": 2660.8599999999997,
+        "rssPeakMb": 200.8359375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "tx.checkout",
+    "group": "tx",
+    "level": 10,
+    "description": "Interactive tx: insert order, bulk-insert 4 items, decrement 4 product stocks, set total (8 statements)",
+    "lanes": {
+      "drizzle": "transaction + query builder",
+      "prisma": "transaction + ORM + raw sql (atomic arithmetic)"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 1405.5339391698672,
+        "opsMin": 1094.806011103932,
+        "opsMax": 1716.2618672358024,
+        "p50": 7.084496999998009,
+        "p95": 11.466403999998874,
+        "p99": 12.297390500001711,
+        "max": 15.413249000001088,
+        "cpuUsPerOp": 1066.58,
+        "rssPeakMb": 160.59765625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 846.6544596602271,
+        "opsMin": 745.0921376963316,
+        "opsMax": 948.2167816241224,
+        "p50": 10.529078499999741,
+        "p95": 19.7864219999974,
+        "p99": 24.65252600000167,
+        "max": 27.410922000002756,
+        "cpuUsPerOp": 1341.38,
+        "rssPeakMb": 201.1171875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "tx.readOnly",
+    "group": "tx",
+    "level": 1,
+    "description": "Read-only tx with 3 sequential reads (user, latest orders, order count)",
+    "lanes": {
+      "drizzle": "transaction + query builder",
+      "prisma": "transaction + ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 927.805943448046,
+        "opsMin": 794.6306236625168,
+        "opsMax": 1060.9812632335752,
+        "p50": 0.966384499999549,
+        "p95": 1.8822760000002745,
+        "p99": 2.769751499999984,
+        "max": 3.4714100000019243,
+        "cpuUsPerOp": 693.8299999999999,
+        "rssPeakMb": 159.6484375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 494.29635170746394,
+        "opsMin": 463.9411198097295,
+        "opsMax": 524.6515836051984,
+        "p50": 1.9489384999978938,
+        "p95": 2.785995999998704,
+        "p99": 3.7335480000001553,
+        "max": 4.806066999997711,
+        "cpuUsPerOp": 1714.5333333333333,
+        "rssPeakMb": 202.9140625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "tx.readOnly",
+    "group": "tx",
+    "level": 10,
+    "description": "Read-only tx with 3 sequential reads (user, latest orders, order count)",
+    "lanes": {
+      "drizzle": "transaction + query builder",
+      "prisma": "transaction + ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 2744.423778065352,
+        "opsMin": 2118.2929637298316,
+        "opsMax": 3370.5545924008725,
+        "p50": 3.6152409999995143,
+        "p95": 6.982440500001758,
+        "p99": 7.998033499998201,
+        "max": 10.587808000000223,
+        "cpuUsPerOp": 432.36,
+        "rssPeakMb": 161.51171875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 1930.3276689645345,
+        "opsMin": 1603.9694093948094,
+        "opsMax": 2256.68592853426,
+        "p50": 5.271517999997741,
+        "p95": 9.061374000000797,
+        "p99": 11.553500500001974,
+        "max": 13.97594200000458,
+        "cpuUsPerOp": 762.9733333333334,
+        "rssPeakMb": 205.31640625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "tx.rollback",
+    "group": "tx",
+    "level": 1,
+    "description": "Tx that inserts then throws: measures rollback + error path",
+    "lanes": {
+      "drizzle": "transaction + query builder",
+      "prisma": "transaction + ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 2108.6540085940896,
+        "opsMin": 1752.8467399621743,
+        "opsMax": 2464.461277226005,
+        "p50": 0.44735600000058184,
+        "p95": 0.8275034999987838,
+        "p99": 1.0209914999995817,
+        "max": 1.3549249999996391,
+        "cpuUsPerOp": 294.02,
+        "rssPeakMb": 161.0234375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 1487.4493050045544,
+        "opsMin": 1352.6162547069202,
+        "opsMax": 1622.2823553021883,
+        "p50": 0.6455530000021099,
+        "p95": 0.9644010000010894,
+        "p99": 1.5323405000017374,
+        "max": 2.0928770000027725,
+        "cpuUsPerOp": 487.12666666666667,
+        "rssPeakMb": 202.23046875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "tx.rollback",
+    "group": "tx",
+    "level": 10,
+    "description": "Tx that inserts then throws: measures rollback + error path",
+    "lanes": {
+      "drizzle": "transaction + query builder",
+      "prisma": "transaction + ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 6447.202851207775,
+        "opsMin": 5577.528124313728,
+        "opsMax": 7316.877578101822,
+        "p50": 1.3217805000022054,
+        "p95": 2.9523779999999533,
+        "p99": 3.5631759999996575,
+        "max": 3.924166000000696,
+        "cpuUsPerOp": 205.51333333333332,
+        "rssPeakMb": 161.1171875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 7058.32399860234,
+        "opsMin": 4538.620757932839,
+        "opsMax": 9578.02723927184,
+        "p50": 1.5200394999956188,
+        "p95": 2.8455749999993714,
+        "p99": 3.3441864999986137,
+        "max": 4.683442000001378,
+        "cpuUsPerOp": 176.83666666666667,
+        "rssPeakMb": 202.4375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "tx.transfer",
+    "group": "tx",
+    "level": 1,
+    "description": "Interactive tx: debit + credit two random accounts + insert ledger row (3 statements)",
+    "lanes": {
+      "drizzle": "transaction + query builder",
+      "prisma": "transaction + raw sql (atomic arithmetic) + ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 741.8801697033962,
+        "opsMin": 587.1167078537477,
+        "opsMax": 896.6436315530445,
+        "p50": 1.1065849999995407,
+        "p95": 2.0418914999991102,
+        "p99": 10.011372500001016,
+        "max": 25.37654499999917,
+        "cpuUsPerOp": 742.36,
+        "rssPeakMb": 160.125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 599.2585351596949,
+        "opsMin": 557.3346876021201,
+        "opsMax": 641.1823827172697,
+        "p50": 1.6227475000050617,
+        "p95": 2.2875995000031253,
+        "p99": 2.893743499997072,
+        "max": 3.1890700000003562,
+        "cpuUsPerOp": 980.4766666666667,
+        "rssPeakMb": 199.55078125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "tx.transfer",
+    "group": "tx",
+    "level": 10,
+    "description": "Interactive tx: debit + credit two random accounts + insert ledger row (3 statements)",
+    "lanes": {
+      "drizzle": "transaction + query builder",
+      "prisma": "transaction + raw sql (atomic arithmetic) + ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 3375.858027555025,
+        "opsMin": 3160.054284676449,
+        "opsMax": 3591.6617704336004,
+        "p50": 2.7408025000004272,
+        "p95": 4.395578999998179,
+        "p99": 5.21733999999924,
+        "max": 6.961588000001939,
+        "cpuUsPerOp": 321.4433333333333,
+        "rssPeakMb": 158.78125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 2118.3652782369536,
+        "opsMin": 2008.8597410781265,
+        "opsMax": 2227.8708153957805,
+        "p50": 4.374497499997233,
+        "p95": 7.19941050000125,
+        "p99": 8.50058799999897,
+        "max": 11.641845999998623,
+        "cpuUsPerOp": 580.9566666666667,
+        "rssPeakMb": 202.46484375,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "tx.transferHot",
+    "group": "tx",
+    "level": 1,
+    "description": "Same transfer tx but over only 8 hot accounts: row-lock contention",
+    "lanes": {
+      "drizzle": "transaction + query builder",
+      "prisma": "transaction + raw sql (atomic arithmetic) + ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 919.9625778406859,
+        "opsMin": 834.6757701970621,
+        "opsMax": 1005.2493854843096,
+        "p50": 1.034502500000599,
+        "p95": 1.5154015000007348,
+        "p99": 1.8814989999991667,
+        "max": 2.1575899999988906,
+        "cpuUsPerOp": 598.24,
+        "rssPeakMb": 158.96875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 622.1903022527622,
+        "opsMin": 618.2239104625877,
+        "opsMax": 626.1566940429367,
+        "p50": 1.530031999998755,
+        "p95": 2.201365499997337,
+        "p99": 3.902632499997708,
+        "max": 4.910818999996991,
+        "cpuUsPerOp": 801,
+        "rssPeakMb": 199.67578125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "tx.transferHot",
+    "group": "tx",
+    "level": 10,
+    "description": "Same transfer tx but over only 8 hot accounts: row-lock contention",
+    "lanes": {
+      "drizzle": "transaction + query builder",
+      "prisma": "transaction + raw sql (atomic arithmetic) + ORM"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 2006.2397746671043,
+        "opsMin": 2001.4577016731944,
+        "opsMax": 2011.0218476610141,
+        "p50": 3.6401144999999815,
+        "p95": 10.43189700000039,
+        "p99": 14.680587999999261,
+        "max": 16.845350999999937,
+        "cpuUsPerOp": 433.44,
+        "rssPeakMb": 159.07421875,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 1276.89224369064,
+        "opsMin": 1151.294248152284,
+        "opsMax": 1402.4902392289962,
+        "p50": 6.3185225000015635,
+        "p95": 17.460714500000904,
+        "p99": 22.964406999999483,
+        "max": 23.361620000003313,
+        "cpuUsPerOp": 711.38,
+        "rssPeakMb": 199.53515625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "mixed.oltp",
+    "group": "mixed",
+    "level": 1,
+    "description": "Weighted OLTP blend: 30% read.pk, 10% read.uniqueEmail, 8% read.indexRange, 7% read.joinInclude, 8% jsonb.insert1k, 4% write.insertOne, 7% write.updateOne, 4% jsonb.update, 4% html.fetchBySlug, 4% search.fullText, 8% tx.transfer, 3% tx.checkout, 3% jsonb.contains",
+    "lanes": {
+      "drizzle": "blend of the above",
+      "prisma": "blend of the above"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 101.96772201918569,
+        "opsMin": 95.08977749356889,
+        "opsMax": 108.84566654480247,
+        "p50": 0.5034844999991037,
+        "p95": 2.338227000000188,
+        "p99": 371.7531555000005,
+        "max": 498.61062200000015,
+        "cpuUsPerOp": 387.07666666666665,
+        "rssPeakMb": 147.51953125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 85.18601258920054,
+        "opsMin": 79.29623087413533,
+        "opsMax": 91.07579430426574,
+        "p50": 1.033175000004121,
+        "p95": 4.656749999998283,
+        "p99": 420.1007340000033,
+        "max": 650.9756649999981,
+        "cpuUsPerOp": 942.135,
+        "rssPeakMb": 184.015625,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  },
+  {
+    "workload": "mixed.oltp",
+    "group": "mixed",
+    "level": 10,
+    "description": "Weighted OLTP blend: 30% read.pk, 10% read.uniqueEmail, 8% read.indexRange, 7% read.joinInclude, 8% jsonb.insert1k, 4% write.insertOne, 7% write.updateOne, 4% jsonb.update, 4% html.fetchBySlug, 4% search.fullText, 8% tx.transfer, 3% tx.checkout, 3% jsonb.contains",
+    "lanes": {
+      "drizzle": "blend of the above",
+      "prisma": "blend of the above"
+    },
+    "cells": {
+      "drizzle": {
+        "opsPerSec": 348.8677465145341,
+        "opsMin": 348.75098954169994,
+        "opsMax": 348.9845034873682,
+        "p50": 0.7136869999994815,
+        "p95": 9.128562499998225,
+        "p99": 781.9858040000017,
+        "max": 844.5971239999999,
+        "cpuUsPerOp": 355.8933333333333,
+        "rssPeakMb": 157.26953125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      },
+      "prisma": {
+        "opsPerSec": 161.57404296015386,
+        "opsMin": 149.25538466225842,
+        "opsMax": 173.8927012580493,
+        "p50": 2.7854430000006687,
+        "p95": 37.16457300000184,
+        "p99": 1170.5507695000015,
+        "max": 1369.2916320000004,
+        "cpuUsPerOp": 1188.6666666666665,
+        "rssPeakMb": 183.125,
+        "errors": 0,
+        "capped": false,
+        "rounds": 2
+      }
+    }
+  }
+]
