@@ -1,0 +1,38 @@
+{
+  "name": "prisma-vs-drizzle",
+  "private": true,
+  "type": "module",
+  "description": "Stress/perf benchmark: Drizzle ORM 1.0 RC (Bun SQL driver) vs Prisma ORM 8 RC (node-postgres driver) on PostgreSQL, running on Bun",
+  "scripts": {
+    "setup": "bun scripts/create-dbs.ts --reset && bun run db:push && bun run db:verify",
+    "db:create": "bun scripts/create-dbs.ts",
+    "db:push": "bun run db:push:prisma && bun run db:push:drizzle",
+    "db:push:prisma": "prisma contract emit && prisma db init",
+    "db:push:drizzle": "drizzle-kit push --force",
+    "db:verify": "bun scripts/verify-schema.ts",
+    "seed": "bun scripts/seed.ts",
+    "reset": "bun scripts/reset-dbs.ts",
+    "bench": "bun src/run-all.ts",
+    "bench:quick": "bun src/run-all.ts --profile quick --rounds 2",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@prisma/orm-postgres": "8.0.0-rc.14",
+    "dotenv": "^18.0.5",
+    "drizzle-orm": "1.0.0-rc.4",
+    "pg": "8.22.0",
+    "temporal-polyfill": "^1.0.4"
+  },
+  "devDependencies": {
+    "@prisma/cli-engine": "0.6.2",
+    "@types/bun": "latest",
+    "@types/pg": "8.20.4",
+    "drizzle-kit": "1.0.0-rc.4",
+    "prisma": "8.0.0-rc.19",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "@prisma/orm-toolchain": "8.0.0-rc.14",
+    "@prisma/orm-framework": "8.0.0-rc.14"
+  }
+}

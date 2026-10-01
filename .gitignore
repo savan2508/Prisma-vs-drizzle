@@ -111,3 +111,10 @@ dist
 
 # TernJS port file
 .tern-port
+
+# --- benchmark project ---
+.env
+# raw per-round results are large; the rendered report + summary are kept
+results/*/*.json
+!results/*/summary.json
+results/tmp/
