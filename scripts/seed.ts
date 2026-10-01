@@ -58,7 +58,7 @@ async function seed(target: { name: string; url: string }) {
 
   await seedChunked(db, n.orders, 50_000, (a, b) => `
     INSERT INTO orders (user_id, status, total_cents, metadata, created_at)
-    SELECT 1 + (i * 7919) % ${n.users}, (${statuses})[1 + i % 5], 500 + (i * 131) % 100000,
+    SELECT 1 + (i::bigint * 7919) % ${n.users}, (${statuses})[1 + i % 5], 500 + (i * 131) % 100000,
            jsonb_build_object('channel', (ARRAY['web','ios','android','pos'])[1 + i % 4],
                               'coupon', CASE WHEN i % 5 = 0 THEN 'SAVE' || (i % 20) ELSE NULL END,
                               'ip', '10.' || (i % 255) || '.' || ((i / 255) % 255) || '.1'),
@@ -67,12 +67,12 @@ async function seed(target: { name: string; url: string }) {
 
   await seedChunked(db, n.orders * 3, 100_000, (a, b) => `
     INSERT INTO order_items (order_id, product_id, quantity, unit_price_cents)
-    SELECT 1 + (j - 1) / 3, 1 + (j * 104729) % ${n.products}, 1 + j % 5, 100 + (j % 900) * 10
+    SELECT 1 + (j - 1) / 3, 1 + (j::bigint * 104729) % ${n.products}, 1 + j % 5, 100 + (j % 900) * 10
     FROM generate_series(${a}, ${b}) AS j`);
 
   await seedChunked(db, n.events, 25_000, (a, b) => `
     INSERT INTO events (user_id, kind, payload, created_at)
-    SELECT 1 + (i * 104729) % ${n.users}, (${kinds})[1 + i % 12],
+    SELECT 1 + (i::bigint * 104729) % ${n.users}, (${kinds})[1 + i % 12],
            jsonb_build_object(
              'device', jsonb_build_object('os', (${oses})[1 + (i / 3) % 5], 'model', 'm-' || (i % 200), 'version', (i % 15) || '.' || (i % 10)),
              'geo', jsonb_build_object('country', (${countries})[1 + (i / 7) % 12], 'city', 'city-' || (i % 500), 'lat', (i % 18000) / 100.0 - 90, 'lon', (i % 36000) / 100.0 - 180),
