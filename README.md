@@ -81,6 +81,48 @@ non-BMP characters, so escaping/encoding paths are exercised.
 
 ---
 
+## Sample results (read this before quoting any number)
+
+A **small smoke run** (`--profile quick --rounds 2 --with-pg-diagnostic`, 39 workloads × concurrency 1 and 10)
+on a 4-vCPU sandbox with Postgres 16 on the *same* machine and default Postgres settings. Full report:
+[`results/quick-diag/report.md`](results/quick-diag/report.md). Treat it as a demonstration of the tool,
+not as a verdict: tiny dataset, two rounds, shared CPUs, release-candidate software. Run `standard` /
+`stress` on your own hardware for numbers that mean something.
+
+Throughput ratio, geometric mean over the workloads in each group (>1 = Drizzle faster):
+
+| group | c=1 | c=10 |
+|---|---:|---:|
+| overhead (`SELECT 1`) | 2.45× | 1.86× |
+| read | 2.58× | 2.54× |
+| jsonb | 1.22× | 1.49× |
+| search | 1.35× | 1.26× |
+| html | 1.36× | 1.48× |
+| write | 2.42× | 2.36× |
+| tx | 1.73× | 2.14× |
+| mixed OLTP | 1.39× | 1.24× |
+
+Overall 1.81× (Drizzle ahead in 71 of 80 cells, Prisma in 1, 8 ties). **Where does the gap come from?**
+The diagnostic adapter (same Drizzle code over `node-postgres`) splits it into a driver part and an ORM part:
+
+| | driver effect (Bun.SQL ÷ pg) | ORM effect (Drizzle ÷ Prisma, both on pg) | total |
+|---|---:|---:|---:|
+| all workloads (geo-mean) | 1.12× | 1.62× | 1.81× |
+
+What the data says in this run:
+
+* Most of the gap is **client-side ORM overhead**, not the driver. On small queries Prisma spends ~2–3× more
+  client CPU per operation (e.g. `read.pk` ≈ 880 µs vs 330 µs at c=1).
+* Row decoding is where it's largest: `read.large20kNarrow` (20 000 rows) is ~6–8× faster on Drizzle
+  (≈ 20 ms vs ≈ 115 ms CPU per call).
+* When **Postgres dominates** the gap disappears: 100 KB jsonb inserts, GIN containment at c=1, full-text
+  search, bulk jsonb inserts are ties or within ~10 %.
+* Bun.SQL's own advantage over `pg` is real but modest (~1.1–1.3× on reads/writes, ≈ 0 for jsonb).
+* Startup: importing Prisma 8 takes ~480 ms vs ~80 ms for Drizzle (peak RSS 262 MB vs 210 MB here).
+* No errors, and the account-balance conservation check passed in every run (no lost updates).
+
+---
+
 ## Methodology (what makes the comparison fair)
 
 * **Process isolation** – each ORM runs in its **own Bun process** (`src/bench.ts`); nothing from one ORM's
