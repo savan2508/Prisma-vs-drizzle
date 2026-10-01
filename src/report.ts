@@ -84,7 +84,6 @@ const verdict = (r: Row, a: Adapter, b: Adapter, names: [string, string]) => {
   if (isTie(r, a, b)) return `tie (${overlaps(r, a, b) ? 'ranges overlap' : '±5%'})`;
   return x > 1 ? `${names[0]} ${x.toFixed(2)}×` : `${names[1]} ${(1 / x).toFixed(2)}×`;
 };
-const gm = (x: number) => (Number.isNaN(x) ? '–' : x >= 1 ? `${x.toFixed(2)}×` : `${(1 / x).toFixed(2)}× slower`);
 
 export function markdown(agg: ReturnType<typeof aggregate>, extra: { rounds: number; order: string[]; runId: string; verifyNote: string; pg: string }) {
   const { runs, rows, adapters } = agg;
@@ -118,7 +117,7 @@ export function markdown(agg: ReturnType<typeof aggregate>, extra: { rounds: num
   const dWins = rows.filter((r) => !isTie(r, 'drizzle', 'prisma') && ratio(r, 'drizzle', 'prisma') > 1).length;
   const pWins = rows.filter((r) => !isTie(r, 'drizzle', 'prisma') && ratio(r, 'drizzle', 'prisma') < 1).length;
   out.push('');
-  out.push(`Overall geometric mean over ${all.length} (workload, concurrency) cells: **${fmtRatio(geomean(all))}**. Cells won: Drizzle **${dWins}**, Prisma **${pWins}**, ties **${all.length - dWins - pWins}**.`);
+  out.push(`Overall geometric mean over ${all.length} (workload, concurrency) cells: ${fmtRatio(geomean(all))}. Cells won: Drizzle **${dWins}**, Prisma **${pWins}**, ties **${all.length - dWins - pWins}**.`);
   out.push('');
 
   // ---- driver isolation
@@ -135,7 +134,7 @@ export function markdown(agg: ReturnType<typeof aggregate>, extra: { rounds: num
       out.push(`| ${g} | ${f('drizzle', 'drizzle-pg')} | ${f('drizzle-pg', 'prisma')} | ${f('drizzle', 'prisma')} |`);
     }
     const f = (a: Adapter, b: Adapter) => fmtRatio(geomean(rows.map((r) => ratio(r, a, b)).filter((x) => !Number.isNaN(x))));
-    out.push(`| **all** | **${f('drizzle', 'drizzle-pg')}** | **${f('drizzle-pg', 'prisma')}** | **${f('drizzle', 'prisma')}** |`);
+    out.push(`| **all** | ${f('drizzle', 'drizzle-pg')} | ${f('drizzle-pg', 'prisma')} | ${f('drizzle', 'prisma')} |`);
     out.push('');
   }
 
@@ -197,4 +196,3 @@ export function markdown(agg: ReturnType<typeof aggregate>, extra: { rounds: num
 function fmtRatio(x: number) {
   return Number.isNaN(x) ? '–' : x >= 1 ? `**${x.toFixed(2)}×**` : `${(1 / x).toFixed(2)}× slower`;
 }
-void gm;
