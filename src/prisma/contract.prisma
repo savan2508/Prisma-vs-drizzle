@@ -1,0 +1,114 @@
+// use prisma-8
+// Prisma 8 contract. Keep in lock-step with src/drizzle/schema.ts
+// (scripts/verify-schema.ts diffs the two physical databases).
+
+model User {
+  id        Int               @id @default(autoincrement())
+  email     String            @unique
+  name      String
+  country   String
+  age       Int
+  profile   Jsonb
+  createdAt TimestamptzString @default(now()) @map("created_at")
+  orders    Order[]
+  documents Document[]
+
+  @@index([country])
+  @@map("users")
+}
+
+model Product {
+  id         Int               @id @default(autoincrement())
+  sku        String            @unique
+  name       String
+  category   String
+  priceCents Int               @map("price_cents")
+  stock      Int
+  attributes Jsonb
+  createdAt  TimestamptzString @default(now()) @map("created_at")
+  items      OrderItem[]
+
+  @@index([category, priceCents])
+  @@index([attributes], type: "gin", name: "products_attributes_gin")
+  @@map("products")
+}
+
+model Order {
+  id         Int               @id @default(autoincrement())
+  userId     Int               @map("user_id")
+  status     String
+  totalCents Int               @map("total_cents")
+  metadata   Jsonb
+  createdAt  TimestamptzString @default(now()) @map("created_at")
+  user       User              @relation(fields: [userId], references: [id])
+  items      OrderItem[]
+
+  @@index([userId])
+  @@index([status, createdAt])
+  @@map("orders")
+}
+
+model OrderItem {
+  id             Int     @id @default(autoincrement())
+  orderId        Int     @map("order_id")
+  productId      Int     @map("product_id")
+  quantity       Int
+  unitPriceCents Int     @map("unit_price_cents")
+  order          Order   @relation(fields: [orderId], references: [id])
+  product        Product @relation(fields: [productId], references: [id])
+
+  @@index([orderId])
+  @@index([productId])
+  @@map("order_items")
+}
+
+model Document {
+  id          Int               @id @default(autoincrement())
+  slug        String            @unique
+  title       String
+  authorId    Int               @map("author_id")
+  html        String
+  plainText   String            @map("plain_text")
+  wordCount   Int               @map("word_count")
+  publishedAt TimestamptzString @default(now()) @map("published_at")
+  author      User              @relation(fields: [authorId], references: [id])
+
+  @@index([authorId])
+  @@index([publishedAt])
+  @@fullTextIndex([plainText], name: "documents_plain_text_fts")
+  @@map("documents")
+}
+
+model Event {
+  id        Int               @id @default(autoincrement())
+  userId    Int               @map("user_id")
+  kind      String
+  payload   Jsonb
+  createdAt TimestamptzString @default(now()) @map("created_at")
+
+  @@index([kind, createdAt])
+  @@index([userId])
+  @@index([payload], type: "gin", name: "events_payload_gin")
+  @@map("events")
+}
+
+model Account {
+  id           Int    @id @default(autoincrement())
+  owner        String
+  balanceCents Int    @map("balance_cents")
+  version      Int    @default(0)
+
+  @@map("accounts")
+}
+
+model Transfer {
+  id          Int               @id @default(autoincrement())
+  fromId      Int               @map("from_id")
+  toId        Int               @map("to_id")
+  amountCents Int               @map("amount_cents")
+  createdAt   TimestamptzString @default(now()) @map("created_at")
+
+  @@index([fromId])
+  @@index([toId])
+  @@map("transfers")
+}

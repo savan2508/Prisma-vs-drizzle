@@ -1,0 +1,35 @@
+# Postgres 16 with sane (non-default) benchmark settings. `docker compose up -d`
+services:
+  postgres:
+    image: postgres:16
+    container_name: bench-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - '5432:5432'
+    shm_size: 1gb
+    command:
+      - postgres
+      - -c
+      - shared_buffers=1GB
+      - -c
+      - effective_cache_size=3GB
+      - -c
+      - work_mem=16MB
+      - -c
+      - maintenance_work_mem=256MB
+      - -c
+      - max_connections=300
+      - -c
+      - random_page_cost=1.1
+      - -c
+      - checkpoint_timeout=15min
+      - -c
+      - max_wal_size=4GB
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 2s
+      timeout: 3s
+      retries: 30
